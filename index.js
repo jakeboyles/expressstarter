@@ -6,6 +6,8 @@ app.use(express.static('public'));
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
 
+var port = process.env.PORT || 8080;
+
 
 const data = [
 	{id:0,name:'jake',age:25,pets:100},
@@ -49,6 +51,6 @@ app.delete('/people/:id',function(req,res){
 	res.json(data);
 })
 
-app.listen(3001, function() {
+app.listen(port, function() {
   console.log('Listening on port 3001');
 });
